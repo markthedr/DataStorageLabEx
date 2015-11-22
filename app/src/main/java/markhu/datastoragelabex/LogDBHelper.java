@@ -29,10 +29,14 @@ public class LogDBHelper extends SQLiteOpenHelper{
     private static final String GET_ALL_QUERY = "select * from " + BUTTON_LOGS_TABLE_NAME;
     private static final String GET_ALL_CONNECTOR = " was clicked ";
 
+    public LogDBHelper(Context context){
+        super(context,DATABASE_NAME,null,DATABASE_VERSION);
+    }
 
     public LogDBHelper(Context context, String name, SQLiteDatabase.CursorFactory factory, int version) {
         super(context, DATABASE_NAME, factory, DATABASE_VERSION);
     }
+
 
     @Override
     public void onCreate(SQLiteDatabase db) {
@@ -53,7 +57,7 @@ public class LogDBHelper extends SQLiteOpenHelper{
     public List<String> getDbRows(){
         SQLiteDatabase reader = getReadableDatabase();
         Cursor result = reader.rawQuery(GET_ALL_QUERY, null);
-        List<String> resultList = new ArrayList<String>();
+        List<String> resultList = new ArrayList<>();
         while(result.moveToNext()){
             resultList.add(result.getString(result.getColumnIndex(KEY_BUTTON_TEXT)) + GET_ALL_CONNECTOR + result.getInt(result.getColumnIndex(KEY_NUM_CLICKS)));
         }

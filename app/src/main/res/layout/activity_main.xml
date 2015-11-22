@@ -9,8 +9,40 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="markhu.datastoragelabex.MainActivity">
 
-    <TextView
+    <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!" />
+        android:text="Show Last"
+        android:id="@+id/btnShowLast"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="91dp"
+        android:onClick="onClick"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Save Last"
+        android:id="@+id/btnSaveLast"
+        android:layout_alignTop="@+id/btnShowLast"
+        android:layout_alignParentEnd="true" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Dump Last"
+        android:id="@+id/btnDumpLast"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="119dp" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Read Last"
+        android:id="@+id/btnReadLast"
+        android:layout_alignTop="@+id/btnDumpLast"
+        android:layout_alignStart="@+id/btnSaveLast" />
+
+
 </RelativeLayout>
